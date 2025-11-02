@@ -10,7 +10,7 @@
   <p>twglogっぽい素朴な一覧。月を選んで閲覧。</p>
 </header>
 <main class="month-list">
-  <a href="2025-11/">2025-11 <span class="badge">8</span></a>
+  <a href="2025-11/">2025-11 <span class="badge">12</span></a>
   <a href="2025-10/">2025-10 <span class="badge">174</span></a>
   <a href="2025-09/">2025-09 <span class="badge">208</span></a>
   <a href="2025-08/">2025-08 <span class="badge">246</span></a>
@@ -32,6 +32,19 @@
   <a href="2024-04/">2024-04 <span class="badge">19</span></a>
   <a href="2024-03/">2024-03 <span class="badge">33</span></a>
   <a href="2024-02/">2024-02 <span class="badge">42</span></a>
+
 </main>
-<footer>Generated daily on GitHub Actions</footer>
+<script>
+const btn = document.getElementById('sortToggle');
+const container = document.getElementById('posts');
+let desc = true;
+
+btn.addEventListener('click', () => {
+  const posts = Array.from(container.querySelectorAll('.post'));
+  posts.reverse().forEach(p => container.appendChild(p));
+  desc = !desc;
+  btn.textContent = desc ? "▼ 降順（新→旧）" : "▲ 昇順（旧→新）";
+});
+</script>
+<footer>Generated from Bluesky via ATProto • 個人用静的アーカイブ</footer>
 </body></html>

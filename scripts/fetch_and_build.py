@@ -159,7 +159,7 @@ def build():
         year, mon = key.split("-")
         (OUT_DIR / key).mkdir(parents=True, exist_ok=True)
         with open(OUT_DIR / key / "index.html", "w", encoding="utf-8") as f:
-    f.write(f"""<!doctype html>
+            f.write(f"""<!doctype html>
 <html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
