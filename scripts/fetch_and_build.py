@@ -259,13 +259,12 @@ def build():
 <body>
 <header>
   <h1>Bluesky 月別アーカイブ</h1>
-  <p>twglogっぽい素朴な一覧。月を選んで閲覧。</p>
 </header>
 <main class="month-list">
 """)
         for mk in month_keys:
             cnt = len(months[mk])
-            f.write(f'  <a href="{mk}/">{mk} <span class="badge">{cnt}</span></a>\\n')
+            f.write(f'  <a href="{mk}/">{mk} <span class="badge">{cnt}</span></a>\n')
         f.write("""</main>
 <footer>Generated daily on GitHub Actions</footer>
 </body></html>
