@@ -178,7 +178,8 @@ def build():
 
             for p in arr:
                 badge = '<span class="badge">reply</span>' if p["is_reply"] else ""
-                f.write(f"""  <article class="post">
+                epoch = int(p["dt"].timestamp())
+                f.write(f"""  <article class="post" data-epoch="{epoch}">
     <div class="meta">{nice_date(p["dt"])} {badge}</div>
     <p>{p["text"]}</p>
     <div><a href="{p["url"]}" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
