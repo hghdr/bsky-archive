@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2025-12 | Bluesky 月別アーカイブ</title>
+<link rel="stylesheet" href="../style.css?v=7b49fad636d71752580bae143d4f0b683fd773ed">
+<link rel="stylesheet" href="../user.css?v=7b49fad636d71752580bae143d4f0b683fd773ed">
+<body>
+<header>
+  <h1>Bluesky 月別アーカイブ – 2025-12</h1>
+  <nav><a href="../index.html">← 月一覧</a></nav>
+  <div style="margin-top:0.5rem">
+    <button id="sortToggle">▼ 降順（新→旧）</button>
+  </div>
+</header>
+<main id="posts">
+  <article class="post" data-epoch="1764551944">
+    <div class="meta">2025-12-01 10:19 </div>
+    <p>夢の中で車に乗った状態で崖から落ちたので内心「うおーこりゃ臨死体験が出来るぞ」と思ったのに全然生きてた。やっぱり経験したことがないと再現できないもんなんですね。</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3m6vb3xcwo22w" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+</main>
+<script>
+(function(){
+  const btn = document.getElementById('sortToggle');
+  const container = document.getElementById('posts');
+  if (!btn || !container) return;
+  let desc = true;
+  function render() {
+    const posts = Array.from(container.querySelectorAll('.post'));
+    posts.sort((a,b) => (desc ? (Number(b.dataset.epoch||0)-Number(a.dataset.epoch||0))
+                               : (Number(a.dataset.epoch||0)-Number(b.dataset.epoch||0))));
+    posts.forEach(el => container.appendChild(el));
+    btn.textContent = desc ? "▼ 降順（新→旧）" : "▲ 昇順（旧→新）";
+  }
+  btn.addEventListener('click', () => { desc = !desc; render(); });
+  render();
+})();
+</script>
+<footer>Generated from Bluesky via ATProto • 個人用静的アーカイブ</footer>
+</body></html>
