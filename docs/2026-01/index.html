@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-01 | Bluesky 月別アーカイブ</title>
+<link rel="stylesheet" href="../style.css?v=71498dfcc96b392d79505014a51247c4a65988ea">
+<link rel="stylesheet" href="../user.css?v=71498dfcc96b392d79505014a51247c4a65988ea">
+<body>
+<header>
+  <h1>Bluesky 月別アーカイブ – 2026-01</h1>
+  <nav><a href="../index.html">← 月一覧</a></nav>
+  <div style="margin-top:0.5rem">
+    <button id="sortToggle">▼ 降順（新→旧）</button>
+  </div>
+</header>
+<main id="posts">
+  <article class="post" data-epoch="1767289043">
+    <div class="meta">2026-01-02 02:37 </div>
+    <p>床で数時間寝たからか体調悪いかも　床アンチになりそう</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mbew7uskcc2k" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+  <article class="post" data-epoch="1767235618">
+    <div class="meta">2026-01-01 11:46 </div>
+    <p>オタクを長くやりすぎて勝手にイタコ状態になり、オタクの喜びも悲しみも怒りも全部わかります。安心してください。任せてください。あなたは、私です。</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mbdehnyij22p" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+  <article class="post" data-epoch="1767235579">
+    <div class="meta">2026-01-01 11:46 </div>
+    <p>🌌🚇の設定公開でキャーー！！！！！！！になりました　私がというか、これを見たオタク達の魂を勝手に感知し叫んでる</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mbdegjkmvc2p" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+</main>
+<script>
+(function(){
+  const btn = document.getElementById('sortToggle');
+  const container = document.getElementById('posts');
+  if (!btn || !container) return;
+  let desc = true;
+  function render() {
+    const posts = Array.from(container.querySelectorAll('.post'));
+    posts.sort((a,b) => (desc ? (Number(b.dataset.epoch||0)-Number(a.dataset.epoch||0))
+                               : (Number(a.dataset.epoch||0)-Number(b.dataset.epoch||0))));
+    posts.forEach(el => container.appendChild(el));
+    btn.textContent = desc ? "▼ 降順（新→旧）" : "▲ 昇順（旧→新）";
+  }
+  btn.addEventListener('click', () => { desc = !desc; render(); });
+  render();
+})();
+</script>
+<footer>Generated from Bluesky via ATProto • 個人用静的アーカイブ</footer>
+</body></html>
