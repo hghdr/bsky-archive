@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-02 | Bluesky 月別アーカイブ</title>
+<link rel="stylesheet" href="../style.css?v=ab8285bb1cc37af6917c1fee43aead4744dfe663">
+<link rel="stylesheet" href="../user.css?v=ab8285bb1cc37af6917c1fee43aead4744dfe663">
+<body>
+<header>
+  <h1>Bluesky 月別アーカイブ – 2026-02</h1>
+  <nav><a href="../index.html">← 月一覧</a></nav>
+  <div style="margin-top:0.5rem">
+    <button id="sortToggle">▼ 降順（新→旧）</button>
+  </div>
+</header>
+<main id="posts">
+  <article class="post" data-epoch="1769906242">
+    <div class="meta">2026-02-01 09:37 </div>
+    <p>イベントが始まったらもう二度とトイレに行けると思うなよという感じだから、今のうちに…。</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mdr3ohwm422o" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+</main>
+<script>
+(function(){
+  const btn = document.getElementById('sortToggle');
+  const container = document.getElementById('posts');
+  if (!btn || !container) return;
+  let desc = true;
+  function render() {
+    const posts = Array.from(container.querySelectorAll('.post'));
+    posts.sort((a,b) => (desc ? (Number(b.dataset.epoch||0)-Number(a.dataset.epoch||0))
+                               : (Number(a.dataset.epoch||0)-Number(b.dataset.epoch||0))));
+    posts.forEach(el => container.appendChild(el));
+    btn.textContent = desc ? "▼ 降順（新→旧）" : "▲ 昇順（旧→新）";
+  }
+  btn.addEventListener('click', () => { desc = !desc; render(); });
+  render();
+})();
+</script>
+<footer>Generated from Bluesky via ATProto • 個人用静的アーカイブ</footer>
+</body></html>
