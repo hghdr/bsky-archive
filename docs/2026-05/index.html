@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-05 | Bluesky 月別アーカイブ</title>
+<link rel="stylesheet" href="../style.css?v=3fd277542ec936663b0d02fdf1bc01128364dbc7">
+<link rel="stylesheet" href="../user.css?v=3fd277542ec936663b0d02fdf1bc01128364dbc7">
+<body>
+<header>
+  <h1>Bluesky 月別アーカイブ – 2026-05</h1>
+  <nav><a href="../index.html">← 月一覧</a></nav>
+  <div style="margin-top:0.5rem">
+    <button id="sortToggle">▼ 降順（新→旧）</button>
+  </div>
+</header>
+<main id="posts">
+  <article class="post" data-epoch="1777604018">
+    <div class="meta">2026-05-01 11:53 </div>
+    <p>メイク用品しまってる仕切りをうっかり落とし全部拾ったはずがアイブロウパウダーだけ完全に紛失した。何？どこ？なんで？</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mkr4s35bic2t" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+  <article class="post" data-epoch="1777601690">
+    <div class="meta">2026-05-01 11:14 <span class="badge">reply</span></div>
+    <p>もう遅い構文はもう遅い✋そして本当に手遅れになっているが、一度見限ったので再度使うとかはないかな〜もう全てのリンクも変えたしweb掲載も取り下げたし…。素早く行動しすぎた。</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mkr2mpctwc2q" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+  <article class="post" data-epoch="1777601585">
+    <div class="meta">2026-05-01 11:13 </div>
+    <p>弱小サークルとして🐯から自主的に追放みたいに出てった俺、自家通販を始め以前の半分以下どころではない売上になる〜在庫保管サービスを今更取り下げたがもう遅い〜</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mkr2jkm6wc2q" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+  <article class="post" data-epoch="1777600417">
+    <div class="meta">2026-05-01 10:53 </div>
+    <p>母に「忘れてると思うけど今月一緒に歌舞伎を見に行くよ」と言ったら本当に忘れてた。ボケたとかじゃなく数ヶ月前にチケット取ると人はこうなる。オタクなら先々の予定が決まることに慣れてるけど。</p>
+    <div><a href="https://bsky.app/profile//post/app.bsky.feed.post/3mkqzgqvles2m" target="_blank" rel="noopener">Blueskyで開く ↗</a></div>
+  </article>
+</main>
+<script>
+(function(){
+  const btn = document.getElementById('sortToggle');
+  const container = document.getElementById('posts');
+  if (!btn || !container) return;
+  let desc = true;
+  function render() {
+    const posts = Array.from(container.querySelectorAll('.post'));
+    posts.sort((a,b) => (desc ? (Number(b.dataset.epoch||0)-Number(a.dataset.epoch||0))
+                               : (Number(a.dataset.epoch||0)-Number(b.dataset.epoch||0))));
+    posts.forEach(el => container.appendChild(el));
+    btn.textContent = desc ? "▼ 降順（新→旧）" : "▲ 昇順（旧→新）";
+  }
+  btn.addEventListener('click', () => { desc = !desc; render(); });
+  render();
+})();
+</script>
+<footer>Generated from Bluesky via ATProto • 個人用静的アーカイブ</footer>
+</body></html>
